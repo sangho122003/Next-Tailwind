@@ -23,7 +23,14 @@ export default function ValueBlock({ data }: { data: ValueBlockData }) {
     if (!isDesktop) {
       return (
         <div
-          style={{ backgroundImage: `url(${data.url})` }}
+          style={{ 
+            backgroundImage: `url(${data.url})`,
+            backgroundSize: '200% 100%',
+            backgroundPosition: 'left center',
+            backgroundRepeat: 'no-repeat',
+        
+        }}
+
           className="relative w-full h-screen bg-left bg-cover bg-no-repeat"
         >
           {/* === Block 1: Top === */}
@@ -71,7 +78,8 @@ export default function ValueBlock({ data }: { data: ValueBlockData }) {
       text-white
       leading-tight
       line-clamp-3
-      text-[clamp(2rem,3vw,3rem)]
+      uppercase
+      text-[clamp(20px,3vw,3rem)]
     "
                 >
                   {data.Title2}
