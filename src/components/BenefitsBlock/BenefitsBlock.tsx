@@ -74,13 +74,25 @@ function DesktopView({ icons }: { icons: IconData[] }) {
 
 function MobileView({ icons }: { icons: IconData[] }) {
   return (
-    <div className="flex flex-col gap-10 md:hidden">
+    <div className="flex flex-col gap-20 md:hidden">
       {icons.map((icon, idx) => (
-        <BenefitItem key={idx} icon={icon} />
+        <div key={idx} className="flex flex-col items-start space-y-4">
+          <div className="w-[118px] h-[118px] relative">
+            <Image
+              src={icon.Image}
+              alt={icon.title}
+              fill
+              className="object-cover rounded-xl"
+            />
+          </div>
+          <h3 className="text-xl font-semibold text-[#1E1E1E] ">{icon.title}</h3>
+          <p className="text-[#1E1E1E] text-base leading-relaxed ">{icon.dis}</p>
+        </div>
       ))}
     </div>
   );
 }
+
 
 export default function BenefitsBlock({ data }: { data: BenefitsBlockData }) {
   const icons: IconData[] = [data.icon1, data.icon2, data.icon3, data.icon4];
