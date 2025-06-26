@@ -30,24 +30,26 @@ export default function HeaderBlock({ data }: { data: DataHead }) {
           backgroundPosition: 'right center',
           backgroundRepeat: 'no-repeat',
         }}
-        className="relative w-full h-screen overflow-hidden bg-no-repeat bg-cover"
+        className="relative w-full h-[66.6667vh] overflow-hidden bg-no-repeat bg-cover"
       >
+        {/* Các lớp overlay góc */}
         <div className={`absolute inset-x-0 top-0 h-1/2 ${overlayColor}`} />
         <div className={`absolute top-1/2 left-0 w-3/24 h-3/10 ${overlayColor}`} />
         <div className={`absolute top-1/2 right-0 w-2/24 h-3/10 ${overlayColor}`} />
         <div className={`absolute bottom-0 inset-x-0 h-1/5 ${overlayColor}`} />
+
+        {/* Nội dung chính */}
         <div className="relative z-10 px-[4.1667%] pt-[20vh] h-1/2 flex flex-col">
-          <p className="text-5xl md:text-6xl font-gothic text-white">
-            {data.Title}
-          </p>
-          <p className="text-6xl md:text-7xl text-head font-fave italic">
-            {data.Title2}
-          </p>
+          <p className="text-5xl md:text-6xl font-gothic text-white">{data.Title}</p>
+          <p className="text-6xl md:text-7xl text-head font-fave italic">{data.Title2}</p>
         </div>
+
+        {/* Padding/phần trống phía dưới */}
         <div className="h-3/10" />
         <div className="h-1/5" />
       </div>
     );
+
   }
   // Desktop layout
   return (
@@ -55,7 +57,7 @@ export default function HeaderBlock({ data }: { data: DataHead }) {
       style={{ backgroundImage: `url(${data.image})` }}
       className="w-full h-screen bg-cover bg-right bg-no-repeat relative">
       <div className={`h-[20vh] w-full ${overlayColor}`} />
-      <div className="relative h-[70vh] w-full flex">  
+      <div className="relative h-[70vh] w-full flex">
         <div className={`h-full w-1/24 ${overlayColor}`} />
         <div className={`h-full w-8/24 ${overlayColor}`} />
         <div className="h-full w-14/24" />
