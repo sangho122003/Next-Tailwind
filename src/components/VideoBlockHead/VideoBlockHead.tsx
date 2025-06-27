@@ -7,14 +7,13 @@ type videodata = {
 export default function VideoBlockHead({ data }: { data: videodata }) {
   return (
     <div className="w-full min-h-auto lg:min-h-[91.2vh]">
-
       {/* Desktop */}
       <div className="hidden lg:flex w-full min-h-[91.2vh]">
         <VideoDesktop data={data} />
       </div>
 
       {/* Mobile */}
-      <div className="block lg:hidden px-4 py-6">
+      <div className="block lg:hidden px-[4.17vw] py-6">
         <VideoMobile data={data} />
       </div>
     </div>
@@ -62,7 +61,7 @@ function VideoDesktop({ data }: { data: videodata }) {
 
 function VideoMobile({ data }: { data: videodata }) {
   return (
-    <div className="px-[4vw] h-auto pt-3 pb-0">
+    <div className=" h-auto pt-3 pb-0">
       <div className="aspect-[16/9] w-full mb-2">
         <iframe
           className="w-full h-full"
@@ -79,4 +78,3 @@ function VideoMobile({ data }: { data: videodata }) {
     </div>
   );
 }
-
